@@ -1,0 +1,33 @@
+.navigation-container-new {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  margin: 0 0.7rem;
+}
+.home-navigation-container {
+  flex-grow: 1;
+}
+.navigation-container-new-Link {
+  margin-right: 0.4rem;
+}
+.brand-image {
+  width: 60px;
+}
+.top-navigation-link {
+  text-decoration: none;
+  font-size: large;
+  font-weight: 700;
+  color: black;
+}
+.navigation-logout-button {
+  margin-left: 5px;
+  background-color: #f5f5f5;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #4b5563;
+}

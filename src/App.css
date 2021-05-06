@@ -1,38 +1,28 @@
+@import url("https://zeenui-dev.netlify.app/styles.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+  font-size: 16px;
+}
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(110px, auto);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* ----cart page design--------------- */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navigation-bar-new {
+  /* position: fixed; */
+  grid-column: 1/13;
+  grid-row: 1/2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background: #a5b4fc;
 }
+.main-listing-container {
+  display: flex;
+  height: auto;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  grid-column: 1/13;
 }
