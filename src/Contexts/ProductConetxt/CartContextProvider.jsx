@@ -107,7 +107,7 @@ export function CartProvider({ children }) {
 
   const productDataFetch = async () => {
     const serverRespone = await axios.get(
-      "https://polar-everglades-32615.herokuapp.com/products"
+      "https://secret-gorge-47362.herokuapp.com/products"
     );
     console.log({ serverRespone });
     console.log("updating products");
@@ -120,7 +120,7 @@ export function CartProvider({ children }) {
 
   const cartUpdater = async () => {
     const updatedCart = await axios.get(
-      "https://polar-everglades-32615.herokuapp.com/cartitems"
+      "https://secret-gorge-47362.herokuapp.com/cartitems"
     );
     console.log({ updatedCart });
     console.log("updating cart");
@@ -140,7 +140,7 @@ export function CartProvider({ children }) {
 
   const wishListUpdater = async () => {
     const updatedWishList = await axios.get(
-      "https://polar-everglades-32615.herokuapp.com/wishlists/6081a05c0058b464caf45b1a"
+      "https://secret-gorge-47362.herokuapp.com/wishlists/6081a05c0058b464caf45b1a"
     );
     // console.log({ updatedWishList });
     console.log("updating wishlist");
@@ -158,7 +158,7 @@ export function CartProvider({ children }) {
       case "ADD-TO-CART-SERVER":
         console.log("adding to cart", payload);
         const cartServerResponse = await axios.post(
-          "https://polar-everglades-32615.herokuapp.com/cartitems",
+          "https://secret-gorge-47362.herokuapp.com/cartitems",
           { ...payload, quantity: payload.quantity + 1 }
         );
         console.log({ cartServerResponse });
@@ -176,7 +176,7 @@ export function CartProvider({ children }) {
         console.log("clicked remove button");
         console.log(payload);
         const cartDeleteServerResponse = await axios.delete(
-          `https://polar-everglades-32615.herokuapp.com/cartitems/${payload._id}`
+          `https://secret-gorge-47362.herokuapp.com/cartitems/${payload._id}`
         );
         cartProductTrackUpdater(payload._id);
         // console.log(cartDeleteServerResponse);
@@ -194,7 +194,7 @@ export function CartProvider({ children }) {
         console.log("filtered itemupdate", itemToBeIncremented);
 
         const latestCartItemQuantityValueForIncrement = await axios.post(
-          `https://polar-everglades-32615.herokuapp.com/cartitems/${payload._id}`,
+          `https://secret-gorge-47362.herokuapp.com/cartitems/${payload._id}`,
           { quantity: itemToBeIncremented[0].quantity + 1 }
         );
         console.log({ latestCartItemQuantityValueForIncrement });
@@ -210,7 +210,7 @@ export function CartProvider({ children }) {
 
         if (itemToBeDecremented[0].quantity > 1) {
           const latestCartItemQuantityValueForIncrement = await axios.post(
-            `https://polar-everglades-32615.herokuapp.com/cartitems/${payload._id}`,
+            `https://secret-gorge-47362.herokuapp.com/cartitems/${payload._id}`,
             { quantity: itemToBeDecremented[0].quantity - 1 }
           );
           console.log({ latestCartItemQuantityValueForIncrement });
@@ -221,7 +221,7 @@ export function CartProvider({ children }) {
 
       case "ADD-TO-WISHLIST":
         const wishListServerResponse = await axios.post(
-          "https://polar-everglades-32615.herokuapp.com/wishlists/6081a05c0058b464caf45b1a",
+          "https://secret-gorge-47362.herokuapp.com/wishlists/6081a05c0058b464caf45b1a",
           {
             productId: [{ _id: payload._id }],
           }
@@ -238,7 +238,7 @@ export function CartProvider({ children }) {
       case "REMOVE-FROM-WISHLIST":
         console.log("remove from wishlist", payload);
         const wishListDeleteServerResponse = await axios.delete(
-          `https://polar-everglades-32615.herokuapp.com/wishlists/6081a05c0058b464caf45b1a/${payload._id}`
+          `https://secret-gorge-47362.herokuapp.com/wishlists/6081a05c0058b464caf45b1a/${payload._id}`
         );
         wishListUpdater();
         toastCreator("Removed From Wishlist", true);
